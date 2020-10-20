@@ -12,7 +12,7 @@ source:
     - patches/0001_openmp_linux_only.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -30,7 +30,7 @@ requirements:
     - python
     - numpy
     - scipy
-    - matplotlib
+    - matplotlib-base
     - openmp  # [unix and not osx]
     - _openmp_mutex  # [unix and not osx]
 
