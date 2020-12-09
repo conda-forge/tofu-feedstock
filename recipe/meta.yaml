@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.4.7" %}
+{% set version = "1.4.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 273b416fe1ded6ba0f1a6cf43d9ebb1726492aa7b349ce4760876a920f051a4f
+  sha256: 4f0f90a2c8010a6c8f86fbd8151f34c00370404f32e37a53f27b74e1bdff3a07
   patches:
     - patches/0001_openmp_linux_only.patch
 
 build:
-  number: 2
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
