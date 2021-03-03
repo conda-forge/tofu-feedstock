@@ -12,7 +12,7 @@ source:
     - patches/0001_openmp_linux_only.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -39,9 +39,9 @@ test:
     - tofu
     - tofu.geom
   commands:
-    - nosetests tofu
+    - pytest tofu/tests
   requires:
-    - nose
+    - pytest
   source_files:
     - tofu/tests
 
