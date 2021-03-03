@@ -39,9 +39,9 @@ test:
     - tofu
     - tofu.geom
   commands:
-    - nosetests tofu
+    - pytest tofu/tests
   requires:
-    - nose
+    - pytest
   source_files:
     - tofu/tests
 
