@@ -12,7 +12,7 @@ source:
     - patches/0001_openmp_linux_only.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
