@@ -33,6 +33,7 @@ requirements:
     - matplotlib-base
     - openmp  # [unix and not osx]
     - _openmp_mutex  # [unix and not osx]
+    - requests
 
 test:
   imports:
