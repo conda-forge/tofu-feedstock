@@ -32,6 +32,7 @@ requirements:
     - openmp  # [unix and not osx]
     - _openmp_mutex  # [unix and not osx]
     - requests
+    - svg.path
 
 test:
   imports:
