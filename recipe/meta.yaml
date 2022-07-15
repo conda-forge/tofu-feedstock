@@ -45,6 +45,7 @@ test:
     - pytest
   source_files:
     - tofu/tests
+    - tofu/tests/tests06_mesh/test_data/ITER_JINTRAC_sh134000_run30_public_edgesources_quadtrimesh.npz
 
 about:
   home: https://github.com/ToFuProject/tofu
