@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 62168b3abfdb6693443daa5ac928411969d77a5427272591d1939ee199e19c8b
+  sha256: fa1705820a5598b44270c468a5be3f499a0d503fcc02f0f33fc4355e37ded886
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
   host:
     - python
     - pip
-    - cython
+    - cython => 0.26
     - numpy
     - setuptools
     - openmp  # [unix and not osx]
@@ -33,6 +33,7 @@ requirements:
     - _openmp_mutex  # [unix and not osx]
     - requests
     - svg.path
+    - datastock => 0.0.17
 
 test:
   imports:
