@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.6.0" %}
+{% set version = "1.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 38e0749ba4c27d044a84d51646737654f5c31196b7520deb3fa7356c4edefc4b
+  sha256: db9e218c37d7a46d27d2dbd706fe7cba9b1b93ce6b6bab7a02ee8f5fca786abe
 
 build:
   number: 0
@@ -36,8 +36,6 @@ requirements:
     - datastock => 0.0.17
 
 test:
-  files:
-  - tofu/tests/tests06_mesh/test_data/ITER_JINTRAC_sh134000_run30_public_edgesources_quadtrimesh.npz
   imports:
     - tofu
     - tofu.geom
