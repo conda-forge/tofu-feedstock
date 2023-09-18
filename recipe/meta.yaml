@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.7.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9a5af3a52ffa7ed7440ff39c3bd9e9aa9d475dad31f552483113020bbbdc9ad
+  sha256: 40bc80633dcbd56a1a368ba5f5618c6064462fc0de2ff99d90198306cdbc61b1
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - _openmp_mutex  # [unix and not osx]
     - requests
     - svg.path
-    - datastock => 0.0.22
+    - bsplines2d => 0.0.7
 
 test:
   imports:
