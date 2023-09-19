@@ -33,6 +33,7 @@ requirements:
     - _openmp_mutex  # [unix and not osx]
     - requests
     - svg.path
+    - Polygon3
     - bsplines2d => 0.0.8
 
 test:
