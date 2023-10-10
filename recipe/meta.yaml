@@ -34,7 +34,7 @@ requirements:
     - requests
     - svg.path
     - Polygon3
-    - bsplines2d => 0.0.8
+    - bsplines2d => 0.0.9
 
 test:
   imports:
