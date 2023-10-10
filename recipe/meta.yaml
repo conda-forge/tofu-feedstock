@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.7.2" %}
+{% set version = "1.7.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0432adce3c7e9c2eedfe9404ab4d60519d1a2cda5a3fdd716dd6d6122883cba
+  sha256: ea508e542b2dce4caad3436ea8fa31592561575d7c59e63240313eefcac3cf46
 
 build:
   number: 0
