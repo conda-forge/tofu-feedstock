@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.7.4" %}
+{% set version = "1.7.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ea508e542b2dce4caad3436ea8fa31592561575d7c59e63240313eefcac3cf46
+  sha256: 3b3b3f5db32a8ea09faed6020aad6de43c0133a33060eac1a48ae972f7e62cb4
 
 build:
   number: 0
@@ -34,7 +34,7 @@ requirements:
     - requests
     - svg.path
     - Polygon3
-    - bsplines2d => 0.0.9
+    - bsplines2d => 0.0.11
 
 test:
   imports:
