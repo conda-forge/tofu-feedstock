@@ -10,7 +10,7 @@ source:
   sha256: 31839a5f415dc9abab7f09afd0b3eaead7acceda0c8950888f71b52fffa7f2a6
   
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - tofu-version = scripts.tofuversion:main
