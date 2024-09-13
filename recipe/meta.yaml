@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a79cf45add692586d39a1dbaecf96b125a5da78f1199e8b599743079d06d26d3
-
+  sha256: 31839a5f415dc9abab7f09afd0b3eaead7acceda0c8950888f71b52fffa7f2a6
+  
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
@@ -27,7 +27,7 @@ requirements:
     - pip
     - cython => 0.26
     - numpy
-    - setuptools
+    - setuptools !=65.*,!=74.*
     - openmp  # [unix and not osx]
   run:
     - python
@@ -39,7 +39,7 @@ requirements:
     - requests
     - svg.path
     - Polygon3
-    - spectrally >=0.0.4
+    - spectrally >=0.0.6
 
 test:
   imports:
