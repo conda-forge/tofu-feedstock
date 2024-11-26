@@ -24,18 +24,18 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - cython => 0.26
     - numpy
     - setuptools !=65.*,!=74.*
-    - openmp  # [unix and not osx]
+    - llvm-openmp  # [unix and not osx]
   run:
-    - python >={{ python_min }}
+    - python
     - numpy
     - scipy
     - matplotlib-base
-    - openmp  # [unix and not osx]
+    - llvm-openmp  # [unix and not osx]
     - _openmp_mutex  # [unix and not osx]
     - requests
     - svg.path
@@ -51,7 +51,7 @@ test:
     - echo ""
   requires:
     - pytest
-    - python {{ python_min }}
+    - python
   source_files:
     - tofu/tests
 
