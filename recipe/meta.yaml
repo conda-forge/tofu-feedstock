@@ -1,14 +1,14 @@
 {% set name = "tofu" %}
-{% set version = "1.8.1" %}
+{% set version = "1.8.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 31839a5f415dc9abab7f09afd0b3eaead7acceda0c8950888f71b52fffa7f2a6
-  
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f57b046b034d2d96df498859fded6e332265c3b22e09a679243dd9b456ce26a8
+
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
