@@ -39,7 +39,7 @@ requirements:
     - requests
     - svg.path
     - Polygon3
-    - spectrally >=0.0.6
+    - spectrally >=0.0.7
 
 test:
   imports:
