@@ -25,14 +25,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - python >={{ python_min }},<={ python_max }
+    - python >={{ python_min }},<={{ python_max }}
     - pip
     - cython => 0.26
     - numpy
     - setuptools >=40.8.0,<64
     - llvm-openmp  # [unix and not osx]
   run:
-    - python >={{ python_min }},<={ python_max }
+    - python >={{ python_min }},<={{ python_max }}
     - numpy
     - scipy
     - matplotlib-base
@@ -52,7 +52,7 @@ test:
     - echo ""
   requires:
     - pytest
-    - python >={{ python_min }},<={ python_max }
+    - python >={{ python_min }},<={{ python_max }}
   source_files:
     - tofu/tests
 
