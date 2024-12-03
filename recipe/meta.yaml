@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.8.3" %}
+{% set version = "1.8.4" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f57b046b034d2d96df498859fded6e332265c3b22e09a679243dd9b456ce26a8
+  sha256: f949640116f87aecd4d7aeee048b67ae4bc48d61421fd582ed83e5e2f2cd129f
   
 build:
   number: 0
@@ -28,7 +28,7 @@ requirements:
     - pip
     - cython => 0.26
     - numpy
-    - setuptools !=65.*,!=74.*
+    - setuptools >=40.8.0,<64
     - llvm-openmp  # [unix and not osx]
   run:
     - python
