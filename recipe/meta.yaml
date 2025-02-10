@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.8.4" %}
+{% set version = "1.8.5" %}
 {% set python_min = "3.8" %}
 {% set python_max = "3.11" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f949640116f87aecd4d7aeee048b67ae4bc48d61421fd582ed83e5e2f2cd129f
+  sha256: e1540d5dce13bd518d2f420f877bf33a5090fc6f03fd2cea5facffa8261caf7f
   
 build:
   number: 0
@@ -41,7 +41,7 @@ requirements:
     - requests
     - svg.path
     - Polygon3
-    - spectrally >=0.0.7
+    - spectrally >=0.0.9
 
 test:
   imports:
