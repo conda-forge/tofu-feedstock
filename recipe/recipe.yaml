@@ -28,25 +28,27 @@ requirements:
       then:
         - python
         - cross-python_${{ target_platform }}
-        - cython >= 0.26
+        - cython >=0.26
         - numpy
+        - llvm-openmp
   host:
     - python
     - pip
-    - cython >= 0.26
+    - cython >=0.26
     - numpy
-    - setuptools >=40.8.0,<64
-    - if: linux
-      then:
-        - libgomp
+    - setuptools
+    - llvm-openmp
   run:
     - python
     - numpy
     - scipy
     - matplotlib-base
+    - contourpy
     - requests
     - svg.path
     - Polygon3
+    - datastock >=0.0.54
+    - bsplines2d >=0.0.27
     - spectrally >=0.0.9
 
 tests:
