@@ -1,63 +1,70 @@
-{% set name = "tofu" %}
-{% set version = "1.8.5" %}
-{% set python_min = "3.8" %}
-{% set python_max = "3.11" %}
+context:
+  name: tofu
+  version: "1.8.16"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e1540d5dce13bd518d2f420f877bf33a5090fc6f03fd2cea5facffa8261caf7f
-  
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: ea0483dc13c2d770ea418bd9e841707ed4b564e8024409fb238b17dc4f2e8031
+
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-  entry_points:
-    - tofu-version = scripts.tofuversion:main
-    - tofu-custom=scripts.tofucustom:main
-    - tofu = scripts.tofu_bash:main
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - tofu-version = scripts.tofuversion:main
+      - tofu-custom=scripts.tofucustom:main
+      - tofu = scripts.tofu_bash:main
 
 requirements:
   build:
-    - {{ stdlib("c") }}
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler("c") }}
+    - ${{ compiler("cxx") }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython >= 0.26
+        - numpy
   host:
-    - python >={{ python_min }},<={{ python_max }}
+    - python
     - pip
-    - cython => 0.26
+    - cython >= 0.26
     - numpy
     - setuptools >=40.8.0,<64
-    - llvm-openmp  # [unix and not osx]
+    - if: linux
+      then:
+        - libgomp
   run:
-    - python >={{ python_min }},<={{ python_max }}
+    - python
     - numpy
     - scipy
     - matplotlib-base
-    - llvm-openmp  # [unix and not osx]
-    - _openmp_mutex  # [unix and not osx]
     - requests
     - svg.path
     - Polygon3
     - spectrally >=0.0.9
 
-test:
-  imports:
-    - tofu
-    - tofu.geom
-  commands:
-    # - pytest tofu/tests
-    - echo ""
-  requires:
-    - pytest
-    - python >={{ python_min }},<={{ python_max }}
-  source_files:
-    - tofu/tests
+tests:
+  - python:
+      imports:
+        - tofu
+        - tofu.geom
+  - script:
+    - pytest tofu/tests
+    files:
+      source:
+        - tofu/tests
+    requirements:
+      run:
+        - pytest
 
 about:
-  home: https://github.com/ToFuProject/tofu
+  homepage: https://github.com/ToFuProject/tofu
   license: MIT
   license_file: LICENSE.txt
   summary: Project for an open-source python library for synthetic diagnostics and tomography for Fusion devices.
@@ -76,8 +83,8 @@ about:
     built-in one-liners for interactive plots.
 
     A sphinx-generated documentation and the code itself is hosted on GitHub.
-  doc_url: https://tofuproject.github.io/tofu/
-  dev_url: https://github.com/ToFuProject/tofu
+  documentation: https://tofuproject.github.io/tofu/
+  repository: https://github.com/ToFuProject/tofu
 
 extra:
   recipe-maintainers:
