@@ -1,5 +1,5 @@
 {% set name = "tofu" %}
-{% set version = "1.8.5" %}
+{% set version = "1.8.12" %}
 {% set python_min = "3.8" %}
 {% set python_max = "3.11" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e1540d5dce13bd518d2f420f877bf33a5090fc6f03fd2cea5facffa8261caf7f
+  sha256: 71e0809d29e2845c67b123f5b110fad104115035d3fac43f3d3404df664ca730
   
 build:
   number: 0
@@ -27,7 +27,7 @@ requirements:
   host:
     - python >={{ python_min }},<={{ python_max }}
     - pip
-    - cython => 0.26
+    - cython >=0.26
     - numpy
     - setuptools >=40.8.0,<64
     - llvm-openmp  # [unix and not osx]
@@ -41,6 +41,8 @@ requirements:
     - requests
     - svg.path
     - Polygon3
+    - datastock >=0.0.54
+    - bsplines2d >=0.0.25
     - spectrally >=0.0.9
 
 test:
